@@ -1,10 +1,10 @@
 <h1 align="center">🔒 Authentication</h1>
-<p align="center">Projeto para aprender autenticação com OAuth integrado</p>
+<p align="center">Projeto para estudos de autenticação JWT com OAuth integrado</p>
 
 <p align="center">
   <a href="#-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-rotas">Rotas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-rotas-do-backend">Rotas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-instalação-e-uso">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">Licença</a>
 </p>
@@ -36,6 +36,8 @@ Este projeto foi <b>realizado para estudos</b> de autenticação OAuth e credenc
 
 **OBS:** Esta será a técnica que iremos utilizar no projeto "XoneCode" do <a href="https://github.com/Space-Coders-Hackaton">Space Coders</a>.
 
+<img src=".github/preview.gif" alt="Preview">
+
 ## 🛠️ Tecnologias
 
 Esse projeto foi desenvolvido usando as seguintes tecnologias:
@@ -44,7 +46,7 @@ Esse projeto foi desenvolvido usando as seguintes tecnologias:
 - [Express](https://expressjs.com)
 - [Typescript](https://typescriptlang.org/)
 - [SQLite](https://www.sqlite.org)
-- [TypeORM](hhttps://typeorm.io/#/)
+- [TypeORM](https://typeorm.io/)
 - [Axios](https://github.com/axios/axios)
 - [class-transformer](https://github.com/typestack/class-transformer)
 - [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
@@ -75,6 +77,14 @@ Resource URI          | Método HTTP | Finalidade
 /oauth/github/:code   | POST        | Cadastro/obtenção de usuário com Github
 
 ## :information_source: Instalação e uso
+
+### Configuração Github
+
+Antes de começar, precisamos criar um novo <a href="https://github.com/settings/developers" target="_blank">OAuth APP no Github</a>.
+Será requirido uma URL de Callback, onde deve colocar um link do **client**, redirecionando para `/github/callback`. Por exemplo: `http://localhost:3000/github/callback`.
+Após criar, copie a chave pública e privada e coloque-as no arquivo `/client/.env.local` e `/client/.env`.
+
+### Execução
 
 Para clonar e executar esta aplicação, você precisará do [Git](https://git-scm.com/) e [Yarn](https://yarnpkg.com/). A partir de sua linha de comando:
 
