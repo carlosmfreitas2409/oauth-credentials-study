@@ -36,7 +36,8 @@ class AuthenticateUserService {
     }
 
     const token = sign({}, process.env.TOKEN_SECRET, {
-      subject: user.id
+      subject: user.id,
+      expiresIn: '15m'
     });
 
     return { user: classToClass(user), token };

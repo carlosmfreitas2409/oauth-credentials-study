@@ -26,7 +26,8 @@ class CreateGithubUserService {
       if(userExists.provider !== 'github') throw new AppError('No user registered with Github!', 404);
 
       const token = sign({}, process.env.TOKEN_SECRET, {
-        subject: userExists.id
+        subject: userExists.id,
+        expiresIn: '15m'
       });
 
       return { user: userExists, token };
@@ -42,7 +43,8 @@ class CreateGithubUserService {
     await this.usersRepository.save(user);
 
     const token = sign({}, process.env.TOKEN_SECRET, {
-      subject: user.id
+      subject: user.id,
+      expiresIn: '15m'
     });
 
     return { user: classToClass(user), token };
